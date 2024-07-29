@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     document.getElementById('realTimeDetection').addEventListener('click', function() {
         startRealTimeDetection();
-        // Show the switch camera button
         document.getElementById('switchCamera').style.display = 'block';
     });
 
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         startRealTimeDetection();
     });
 
-    // Initially hide the switch camera button
     document.getElementById('switchCamera').style.display = 'none';
 });
 
@@ -52,7 +50,10 @@ async function predict(imageElement) {
         .toFloat()
         .expandDims();
 
-    tensor = tf.keras.applications.vgg16.preprocessInput(tensor);
+    // Preprocess as per VGG16 expectations (subtract mean RGB value)
+    tensor = tf.div(tensor, 255.0); // Normalize to [0, 1]
+    tensor = tf.sub(tensor, tf.tensor([0.485, 0.456, 0.406])); // Subtract mean RGB
+    tensor = tf.div(tensor, tf.tensor([0.229, 0.224, 0.225])); // Divide by standard deviation RGB
 
     // Make predictions
     const predictions = await model.predict(tensor).data();
@@ -72,7 +73,6 @@ let useFrontCamera = false;
 function startRealTimeDetection() {
     var video = document.getElementById('video');
 
-    // Stop the current video stream if it exists
     if (video.srcObject) {
         video.srcObject.getTracks().forEach(track => track.stop());
     }
@@ -92,7 +92,6 @@ function startRealTimeDetection() {
                 setInterval(async function() {
                     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-                    // Preprocess the image and make predictions
                     const predictions = await predict(canvas);
                     displayResult(predictions);
                 }, 2000);
