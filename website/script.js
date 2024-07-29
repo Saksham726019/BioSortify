@@ -3,7 +3,7 @@ const classLabels = ["Biodegradable", "Non-Biodegradable"];
 
 async function loadModel() {
     console.log('Loading model...');
-    model = await tf.loadLayersModel('/path_to_your_model/model.json');
+    model = await tf.loadLayersModel("../tfjs_model/model.json");
     console.log('Model loaded.');
 }
 
