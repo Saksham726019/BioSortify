@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Sortify - Our Model</title>
+    <link rel="icon" href="../img/LOGO.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="../img/LOGO.png" alt="BioSortify Logo" class="logo" />
+            <h1 class="website-name">Bio Sortify: AI for greener tomorrow</h1>
+        </div>
+        <nav>
+            <a href="home.html" class="nav-link active">Home</a>
+            <a href="model.html" class="nav-link">Our Model</a>
+            <a href="about.html" class="nav-link">About Us</a>
+        </nav>
+    </header>
+
+    <main>
+         <section class="model-intro">
+            <h1>Our AI Model</h1>
+            <p>An innovative project that leverages the power of Artificial Intelligence (AI) to revolutionize waste management.
+                Driven by a commitment to sustainability and environmental stewardship, our AI model represents a
+                pivotal advancement in the pursuit of a cleaner and greener future.
+                By automating and optimizing waste classification processes, it empowers waste management stakeholders
+                to make data-driven decisions, streamline operations, and minimize environmental impact. </p>
+
+            <p> As we continue to refine and enhance our AI model, we are dedicated to fostering collaborations
+                and partnerships aimed at realizing a more sustainable and eco-friendly world. Together,
+                let us embrace the transformative potential of AI to create a brighter and cleaner future
+                for generations to come. </p>
+        </section>
+
+        <section class="model-details">
+            <h2>Model Architecture</h2>
+            <p>Our model is built using TensorFlow and Keras, incorporating transfer learning on the VGG16 model
+                to leverage pre-trained weights.
+                The model was trained with the batch size of 64
+                and an input size of 224x224 pixels across 3 channels using GPU T4 x2 in kaggle notebook.</p>
+            <p>The model has been trained for 50 epochs on the Biodegradable and Non-Biodegradable dataset,
+                which includes over 256,000 images.
+                This extensive training enables our model to accurately classify the type of waste.</p>
+        </section>
+
+        <section class="model-performance">
+            <h2>Performance and Accuracy</h2>
+            <p>The proficiency of our model is clearly demonstrated by its accuracy and the assurance it provides in its
+                forecasts. Through thorough examination and enhancement, we make certain that our model fulfills the
+                stringent criteria necessary for practical applications in waste separation achieving over 98.8% of accuracy.
+            </p>
+            <img src="../img/modelEvaluation.png" alt="Model accuracy graph" class="title">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 BioSortify - AI for a greener tomorrow.</p>
+    </footer>
+</body>
+
+</html>
