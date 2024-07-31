@@ -4,7 +4,7 @@
 Bio Sortify is a machine learning model trained to classify waste as either biodegradable or non-biodegradable. The model boasts an impressive accuracy of **98.8%**. This project was developed for Philly Codefest 2024, where the theme was "AI for Common Good". 
 
 ## Web Interface
-A user-friendly website was built using **HTML**, **CSS**, and **JavaScript**to interact with the model. The website supports both image classification and real-time classification. We used **FastAPI** to connect the model to the website, ensuring a seamless and efficient interaction between the user interface and the machine learning model.
+A user-friendly website was built using **HTML**, **CSS**, and **JavaScript** to interact with the model. The website supports both image classification and real-time classification. We used **FastAPI** to connect the model to the website, ensuring a seamless and efficient interaction between the user interface and the machine learning model.
 
 ## Model Training
 Our model is built using TensorFlow and Keras, incorporating transfer learning on the **VGG16** model to leverage pre-trained weights. The model was trained with the batch size of 64 and an input size of 224x224 pixels across 3 channels using GPU T4 x2 in kaggle notebook.
